@@ -13,9 +13,9 @@ import java.util.logging.Logger;
 
 @RestController
 @RequestMapping("/gemini")
-public class GeminiOcrController {
+public class GeminiApiController {
 
-    private static final Logger LOG = Logger.getLogger(GeminiOcrController.class.getName());
+    private static final Logger LOG = Logger.getLogger(GeminiApiController.class.getName());
 
     @Autowired
     private GeminiApiService geminiApiService;
@@ -23,23 +23,23 @@ public class GeminiOcrController {
     @PostMapping("/process-image")
     public ResponseEntity<HashMap<String, Object>> processImage(@RequestParam("file") MultipartFile file,
                                                                 @RequestParam("prompt") String prompt) {
-        LOG.info("\n\nINSIDE CLASS == GeminiOcrController, METHOD == processImage(); ");
+        LOG.info("\n\nINSIDE CLASS == GeminiApiController, METHOD == processImage(); ");
 
         try {
             JsonNode result = geminiApiService.getResponse(file, prompt);
 
             if(result != null) {
                 LOG.info("\nImage processed successfully.");
-                LOG.info("\nEXITING METHOD == processImage() OF CLASS == GeminiOcrController \n\n");
+                LOG.info("\nEXITING METHOD == processImage() OF CLASS == GeminiApiController \n\n");
                 return getResponseFormat(HttpStatus.OK, "Image processed successfully", result);
             } else {
                 LOG.info("\nImage processing failed.");
-                LOG.info("\nEXITING METHOD == processImage() OF CLASS == GeminiOcrController \n\n");
+                LOG.info("\nEXITING METHOD == processImage() OF CLASS == GeminiApiController \n\n");
                 return getResponseFormat(HttpStatus.INTERNAL_SERVER_ERROR, "Image processing failed", null);
             }
         } catch (Exception e) {
-            LOG.severe("\nError in processImage() method of GeminiOcrController: " + e.getMessage());
-            LOG.info("\nEXITING METHOD == processImage() OF CLASS == GeminiOcrController \n\n");
+            LOG.severe("\nError in processImage() method of GeminiApiController: " + e.getMessage());
+            LOG.info("\nEXITING METHOD == processImage() OF CLASS == GeminiApiController \n\n");
             return getResponseFormat(HttpStatus.INTERNAL_SERVER_ERROR, "Critical Error: " + e.getLocalizedMessage(), null);
         }
     }
