@@ -30,8 +30,8 @@ This integration offers a streamlined way to upload images, process them with a 
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/yourusername/gemini-api-integration.git
-   cd gemini-api-integration
+   git clone https://github.com/yourusername/Google-Gemini-1.5-Flash-Image-Processing-Java-Spring-Boot-without-VertexAPI.git
+   cd Google-Gemini-1.5-Flash-Image-Processing-Java-Spring-Boot-without-VertexAPI
    ```
 
 2. **Configure API Key**:  
@@ -40,11 +40,6 @@ This integration offers a streamlined way to upload images, process them with a 
    google.api.key=YOUR_GOOGLE_API_KEY
    ```
 
-3. **Build and Run**:
-   Use Maven to build and run the project.
-   ```bash
-   mvn spring-boot:run
-   ```
 
 ## Usage
 
@@ -75,14 +70,6 @@ This project allows you to modify various parameters and processing logic to sui
 
 3. **Extend Functionality**:
    Users can add additional API endpoints or integrate further with Google’s AI services to expand functionality beyond the initial image and text generation tasks.
-
-## Use Cases
-
-This integration with Google Gemini's API offers several potential applications:
-
-- **Educational**: For learning and teaching how to integrate a Java Spring Boot application with AI services, especially with Google’s AI offerings.
-- **Content Moderation**: Utilizing Google’s safety settings to filter categories, this project can help manage and moderate user-generated content.
-- **Image Content Generation**: Automate workflows involving image analysis and text generation, useful in content creation, social media, and more.
 
 ## License
 
